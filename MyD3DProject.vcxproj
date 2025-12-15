@@ -93,6 +93,12 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <FxCompile>
+      <DisableOptimizations>false</DisableOptimizations>
+    </FxCompile>
+    <FxCompile>
+      <EnableDebuggingInformation>false</EnableDebuggingInformation>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -121,6 +127,12 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <FxCompile>
+      <DisableOptimizations>false</DisableOptimizations>
+    </FxCompile>
+    <FxCompile>
+      <EnableDebuggingInformation>false</EnableDebuggingInformation>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -146,7 +158,8 @@
     <ClCompile Include="common\GameTimer.cpp" />
     <ClCompile Include="common\GeometryGenerator.cpp" />
     <ClCompile Include="common\MathHelper.cpp" />
-    <ClCompile Include="instance\src\Chapter 4\originApp.cpp" />
+    <ClCompile Include="instance\src\BoxApp.cpp" />
+    <ClCompile Include="instance\src\originApp.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +172,16 @@
     <ClInclude Include="common\GeometryGenerator.h" />
     <ClInclude Include="common\MathHelper.h" />
     <ClInclude Include="common\UploadBuffer.h" />
+    <ClInclude Include="instance\include\BoxApp.h" />
     <ClInclude Include="instance\include\originApp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\color.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

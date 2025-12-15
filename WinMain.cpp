@@ -1,4 +1,5 @@
-#include "Chapter4/originApp.h"
+#include "originApp.h"
+#include "BoxApp.h"
 
 #include <shellapi.h> // for CommandLineToArgvW
 #include <wchar.h>    // for wcscmp
@@ -51,6 +52,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 		if (m_cmd_line_info.runInstanceIndex == 0)
 		{
 			InitDirect3DApp theApp(hInstance);
+			if (!theApp.Initialize()) return 0;
+
+			return theApp.Run();
+		}
+		else if (m_cmd_line_info.runInstanceIndex == 1)
+		{
+			BoxApp theApp(hInstance);
 			if (!theApp.Initialize()) return 0;
 
 			return theApp.Run();

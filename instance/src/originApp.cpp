@@ -1,9 +1,12 @@
-#include "Chapter4/originApp.h"
+#include "originApp.h"
 
 using namespace DirectX;
 
 
-InitDirect3DApp::InitDirect3DApp(HINSTANCE hInstance) : D3DApp(hInstance) {}
+InitDirect3DApp::InitDirect3DApp(HINSTANCE hInstance) : D3DApp(hInstance) 
+{
+	mMainWndCaption = L"Initializing D3D";
+}
 
 InitDirect3DApp::~InitDirect3DApp()
 {
