@@ -59,6 +59,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 		else if (m_cmd_line_info.runInstanceIndex == 1)
 		{
 			BoxApp theApp(hInstance);
+			theApp.SetVSPath(L"Shaders\\color.hlsl");
+			theApp.SetPSPath(L"Shaders\\color.hlsl");
 			if (!theApp.Initialize()) return 0;
 
 			return theApp.Run();

@@ -679,3 +679,13 @@ void D3DApp::LogOutputDisplayModes(IDXGIOutput* output, DXGI_FORMAT format)
 		::OutputDebugString(text.c_str());
 	}
 }
+
+void D3DApp::SetVSPath(std::wstring VSPath)
+{
+	mVSPath = VSPath;
+}
+
+void D3DApp::SetPSPath(std::wstring PSPath)
+{
+	mPSPath = PSPath;
+}

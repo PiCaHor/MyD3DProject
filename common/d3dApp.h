@@ -39,6 +39,9 @@ public:
     virtual bool Initialize();
     virtual LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
+	void SetVSPath(std::wstring VSPath);
+	void SetPSPath(std::wstring PSPath);
+
 protected:
     virtual void CreateRtvAndDsvDescriptorHeaps();
     virtual void OnResize();
@@ -121,5 +124,8 @@ protected:
     DXGI_FORMAT mDepthStencilFormat = DXGI_FORMAT_D24_UNORM_S8_UINT;
     int mClientWidth = 800;
     int mClientHeight = 600;
+
+    std::wstring mVSPath = L"";
+    std::wstring mPSPath = L"";
 };
 
