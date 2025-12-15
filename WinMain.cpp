@@ -1,5 +1,6 @@
 #include "originApp.h"
 #include "BoxApp.h"
+#include "commonType.h"
 
 #include <shellapi.h> // for CommandLineToArgvW
 #include <wchar.h>    // for wcscmp
@@ -13,6 +14,7 @@ struct cmdLineInfo
 	0:initialize app
 	*/
 	int runInstanceIndex = -1;
+	int geoType = 0;
 };
 
 bool processCmdLine(cmdLineInfo& cmd_line_info)
@@ -27,6 +29,11 @@ bool processCmdLine(cmdLineInfo& cmd_line_info)
 	for (int i = 1; i < argc; ++i) {
 		if (wcscmp(argv[i], L"-ins") == 0 && i + 1 < argc) {
 			cmd_line_info.runInstanceIndex = _wtoi(argv[i + 1]);
+			i++;
+		}
+		else if (wcscmp(argv[i], L"-geoType") == 0 && i + 1 < argc)
+		{
+			cmd_line_info.geoType = _wtoi(argv[i + 1]);
 			i++;
 		}
 	}
@@ -61,6 +68,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 			BoxApp theApp(hInstance);
 			theApp.SetVSPath(L"Shaders\\color.hlsl");
 			theApp.SetPSPath(L"Shaders\\color.hlsl");
+
+			if (m_cmd_line_info.geoType == 0)
+			{
+				theApp.SetGeoType(geoType::box);
+			}
+			else if (m_cmd_line_info.geoType == 1)
+			{
+				theApp.SetGeoType(geoType::pyramid);
+			}
+
 			if (!theApp.Initialize()) return 0;
 
 			return theApp.Run();

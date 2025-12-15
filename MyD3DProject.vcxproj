@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\Camera.h" />
+    <ClInclude Include="common\commonType.h" />
     <ClInclude Include="common\d3dApp.h" />
     <ClInclude Include="common\d3dUtil.h" />
     <ClInclude Include="common\d3dx12.h" />

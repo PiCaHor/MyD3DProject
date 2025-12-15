@@ -3,6 +3,7 @@
 #include "d3dApp.h"
 #include "MathHelper.h"
 #include "UploadBuffer.h"
+#include "commonType.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -29,6 +30,8 @@ public:
 
 	virtual bool Initialize()override;
 
+	void SetGeoType(geoType geo_type);
+
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
@@ -43,6 +46,7 @@ private:
 	void BuildRootSignature();
 	void BuildShadersAndInputLayout();
 	void BuildBoxGeometry();
+	void BuildPyramidGeometry();
 	void BuildPSO();
 
 private:
@@ -70,5 +74,7 @@ private:
 	float mRadius = 5.0f;
 
 	POINT mLastMousePos;
+
+	geoType mGeoType = geoType::box;
 };
 
