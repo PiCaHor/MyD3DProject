@@ -20,7 +20,7 @@ VertexOut VS(VertexIn vin)
 {
 	VertexOut vout;
 
-	// box changes over time
+	// box shape changes over time
 	// vin.PosL.xy += 0.5f*sin(vin.PosL.xy) * sin(3.0f*gTime);
 	// vin.PosL.z *= 0.6f + 0.4f * sin(2.0f*gTime);
 
@@ -35,5 +35,7 @@ VertexOut VS(VertexIn vin)
 
 float4 PS(VertexOut pin) : SV_Target
 {
+	//box color changes over time
+	// pin.Color = (pin.Color + cos(gTime));
 	return pin.Color;
 }
