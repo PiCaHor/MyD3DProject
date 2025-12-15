@@ -12,3 +12,9 @@ MyD3DProject.exe {param}
 | ------ | -------------------------- |
 | -ins   | choose one instance to run |
 
+
+
+#### -ins
+
+* 0: Run InitializeApp
+* 1: Run BoxApp
