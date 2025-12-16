@@ -46,6 +46,12 @@
     <ClCompile Include="instance\src\originApp.cpp">
       <Filter>instance\src</Filter>
     </ClCompile>
+    <ClCompile Include="instance\src\ShapesApp.cpp">
+      <Filter>instance\src</Filter>
+    </ClCompile>
+    <ClCompile Include="common\FrameResource.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\Camera.h">
@@ -81,9 +87,19 @@
     <ClInclude Include="instance\include\originApp.h">
       <Filter>instance\include</Filter>
     </ClInclude>
+    <ClInclude Include="common\commonType.h" />
+    <ClInclude Include="instance\include\ShapesApp.h">
+      <Filter>instance\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FrameResource.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Shaders\color.hlsl">
+    <FxCompile Include="Shaders\colorShapes.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\colorBA.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
   </ItemGroup>

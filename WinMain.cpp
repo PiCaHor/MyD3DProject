@@ -1,5 +1,6 @@
 #include "originApp.h"
 #include "BoxApp.h"
+#include "ShapesApp.h"
 #include "commonType.h"
 
 #include <shellapi.h> // for CommandLineToArgvW
@@ -66,8 +67,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 		else if (m_cmd_line_info.runInstanceIndex == 1)
 		{
 			BoxApp theApp(hInstance);
-			theApp.SetVSPath(L"Shaders\\color.hlsl");
-			theApp.SetPSPath(L"Shaders\\color.hlsl");
+			theApp.SetVSPath(L"Shaders\\colorBA.hlsl");
+			theApp.SetPSPath(L"Shaders\\colorBA.hlsl");
 
 			if (m_cmd_line_info.geoType == 0)
 			{
@@ -77,6 +78,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 			{
 				theApp.SetGeoType(geoType::pyramid);
 			}
+
+			if (!theApp.Initialize()) return 0;
+
+			return theApp.Run();
+		}
+		else if (m_cmd_line_info.runInstanceIndex == 2)
+		{
+			ShapesApp theApp(hInstance);
+			theApp.SetVSPath(L"Shaders\\colorShapes.hlsl");
+			theApp.SetPSPath(L"Shaders\\colorShapes.hlsl");
 
 			if (!theApp.Initialize()) return 0;
 

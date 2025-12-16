@@ -19,6 +19,7 @@ MyD3DProject.exe {param}
 
 * 0: Run InitializeApp
 * 1: Run BoxApp
+* 2: Run ShapesApp
 
 #### -geoType
 
