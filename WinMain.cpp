@@ -89,6 +89,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 			theApp.SetVSPath(L"Shaders\\colorShapes.hlsl");
 			theApp.SetPSPath(L"Shaders\\colorShapes.hlsl");
 
+			if (m_cmd_line_info.geoType == 2)
+			{
+				theApp.SetGeoType(geoType::shapes);
+			}
+			else if (m_cmd_line_info.geoType == 3)
+			{
+				theApp.SetGeoType(geoType::skull);
+			}
+
 			if (!theApp.Initialize()) return 0;
 
 			return theApp.Run();

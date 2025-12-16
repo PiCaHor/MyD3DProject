@@ -5,6 +5,7 @@
 #include "UploadBuffer.h"
 #include "GeometryGenerator.h"
 #include "FrameResource.h"
+#include "commonType.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -52,6 +53,8 @@ public:
 
 	virtual bool Initialize()override;
 
+	void SetGeoType(geoType geo_type);
+
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
@@ -71,6 +74,7 @@ private:
 	void BuildRootSignature();
 	void BuildShadersAndInputLayout();
 	void BuildShapeGeometry();
+	void BuildSkullGeometry();
 	void BuildPSOs();
 	void BuildFrameResources();
 	void BuildRenderItems();
@@ -114,5 +118,7 @@ private:
 	float mRadius = 15.0f;
 
 	POINT mLastMousePos;
+
+	geoType mGeoType = geoType::shapes;
 };
 

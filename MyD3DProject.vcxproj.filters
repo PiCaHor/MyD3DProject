@@ -87,11 +87,13 @@
     <ClInclude Include="instance\include\originApp.h">
       <Filter>instance\include</Filter>
     </ClInclude>
-    <ClInclude Include="common\commonType.h" />
     <ClInclude Include="instance\include\ShapesApp.h">
       <Filter>instance\include</Filter>
     </ClInclude>
     <ClInclude Include="common\FrameResource.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\commonType.h">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>

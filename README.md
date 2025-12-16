@@ -26,4 +26,6 @@ MyD3DProject.exe {param}
 this param for BoxApp only
 
 * 0: BoxShape
-* 1:pyramidShape
+* 1: PyramidShape
+* 2:Multiple Shapes
+* 3:Skull
